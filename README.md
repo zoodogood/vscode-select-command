@@ -49,4 +49,26 @@ Helps to pick one of commands
 		"workbench.action.openSnippets"
 	]
 },
+{
+	"key": "insert",
+	"command": "select-command.quick",
+	"args": [
+			{
+				"label": "Toggle font size",
+				"command": "toggle",
+				"args": {
+					"id": "editor.fontSize",
+					"value": [
+						{ "editor.fontSize": 7 },
+						{ "editor.fontSize": 9 },
+						{ "editor.fontSize": 14 }
+					]
+				}
+			},
+			{
+				"label": "Toggle theme",
+				"command": "workbench.action.selectTheme"
+			},
+	]
+},
 ```
