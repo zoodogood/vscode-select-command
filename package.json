@@ -7,7 +7,7 @@
     "url": "https://github.com/zoodogood/vscode-select-command",
     "type": "github"
   },
-  "version": "0.0.2",
+  "version": "1.0.0",
   "engines": {
     "vscode": "^1.54.0"
   },
