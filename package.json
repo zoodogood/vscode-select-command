@@ -26,7 +26,7 @@
     "commands": [
       {
         "command": "select-command.quick",
-        "title": "Quick select"
+        "title": "Selectable command"
       }
     ]
   },
