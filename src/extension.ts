@@ -9,12 +9,12 @@ export function activate(context: vscode.ExtensionContext) {
 	type Arg = CommandBase | string
 
 	defineCommand("quick", async (args: Arg[]) => {
-		const commands: CommandBase[] = arrayConditionalMap(args, ($) => {
+		const commands: CommandBase[] = args.map(($) => {
 			switch (typeof $) {
 				case "string":
 					 return { command: $ }
 				default: 
-					return false
+					return $
 			}
 		}) as CommandBase[]
 		const picked = await vscode.window.showQuickPick(
@@ -37,17 +37,3 @@ export function activate(context: vscode.ExtensionContext) {
 }
 
 export function deactivate() {}
-
-function arrayConditionalMap<T>(
-	array: T[],
-	cb: ($: T, i: number, array: T[]) => T | false
-): T[] {
-	return array.map(($, i, array) => {
-		const newValue = cb($, i, array)
-		return newValue || $
-	})
-}
-
-function arrayOf<T>(length: number, mapFn: (i: number) => T): T[] {
-	return Array.from({length}, mapFn)
-}
